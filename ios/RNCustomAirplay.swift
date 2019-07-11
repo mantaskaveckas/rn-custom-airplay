@@ -46,6 +46,6 @@ class RNCustomAirplay: RCTEventEmitter {
     }
 
     override func supportedEvents() -> [String]! {
-        return ["airplayConnected"]
+        return ["airplayConnected", "airplayAvailable"]
     }
 }
