@@ -9,11 +9,6 @@ class RNCustomAirplayButton: RCTViewManager {
   override func view() -> UIView! {
     let volumeView = MPVolumeView()
     volumeView.showsVolumeSlider = false
-    if let routeButton = volumeView.subviews.last as? UIButton,
-      let routeButtonTemplateImage  = routeButton.currentImage?.withRenderingMode(.alwaysTemplate)
-    {
-      volumeView.setRouteButtonImage(routeButtonTemplateImage, for: [])
-    }
 
     return volumeView
   }
