@@ -35,6 +35,16 @@ class RNCustomAirplay: RCTEventEmitter {
                        body: ["connected": isConnected])
     }
 
+    @onjc func isAvailable() -> Void {
+        let currentRoute = AVAudioSession.sharedInstance().currentRoute
+        var isAvailable = false
+        if (currentRoute.outputs > 0) {
+            isAvailable = true
+        }
+        self.sendEvent(withName: "airplayAvailable",
+                        body: ["available": isAvailable])
+    }
+
     override func supportedEvents() -> [String]! {
         return ["airplayConnected"]
     }
