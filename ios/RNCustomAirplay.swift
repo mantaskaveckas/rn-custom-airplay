@@ -38,7 +38,7 @@ class RNCustomAirplay: RCTEventEmitter {
     @objc func isAvailable() -> Void {
         let currentRoute = AVAudioSession.sharedInstance().currentRoute
         var isAvailable = false
-        if (currentRoute.outputs > 0) {
+        if (currentRoute.outputs.count > 0) {
             isAvailable = true
         }
         self.sendEvent(withName: "airplayAvailable",
